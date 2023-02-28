@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 3.0f;
 
     public Animator animator;
+
+    private Vector3 direction;
     void Start()
     {
         
@@ -16,10 +18,15 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, vertical);
+        direction = new Vector3(horizontal, vertical);
 
         AnimateMovement(direction);
 
+    }
+
+    //called after calculating collisions, resolving jitter
+    private void FixedUpdate()
+    {
         transform.position += direction.normalized * speed * Time.deltaTime;
     }
 
