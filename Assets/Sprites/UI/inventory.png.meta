@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -3692,10 +3692,10 @@ TextureImporter:
       inventory_137: 927394299
       inventory_89: 1585097695
       inventory_7: 791549039
-      inventory_48: 1262326453
       inventory_94: -1133356523
-      inventory_75: 145036919
       inventory_150: 1989473537
+      inventory_48: 1262326453
+      inventory_75: 145036919
       inventory_1: -1072155840
       inventory_61: 1873215131
       inventory_143: 1324662847

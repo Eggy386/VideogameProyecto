@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1792,8 +1792,8 @@ TextureImporter:
       UI_27: 1053871375
       UI_21: 1246976589
       UI_3: -2120616134
-      UI_98: 834499420
       UI_107: 242363734
+      UI_98: 834499420
       UI_88: 1866295098
       UI_51: -1135539341
       UI_75: -1249744105
