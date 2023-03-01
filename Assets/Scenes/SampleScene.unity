@@ -17851,9 +17851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146e9ec0dda9d1540ad3c968242b3286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectableItems:
-  - {fileID: 689142574233267448, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
-  - {fileID: 9143666791462074569, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
+  items:
+  - {fileID: 7853506809580796522, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
+  - {fileID: 1984334608569265755, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
 --- !u!114 &1247358991
 MonoBehaviour:
   m_ObjectHideFlags: 0
