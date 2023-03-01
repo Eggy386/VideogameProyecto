@@ -11,6 +11,22 @@ public class Player : MonoBehaviour
         inventory = new Inventory(27); // passing the num of slots we want;
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            //Check if the tile is interactable
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+            if(GameManager.instance.tileManager.isInteractable(position))
+            {
+                //Change the tile to plowed
+                Debug.Log("Tile is interactable");
+                GameManager.instance.tileManager.SetInteracted(position);
+            }
+
+        }
+    }
+
     public void DropItem(Collectable item)
     {
         Vector2 spawnLocation = transform.position;

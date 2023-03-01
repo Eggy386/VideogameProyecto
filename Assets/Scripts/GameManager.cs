@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public static GameManager instance;
+    public static GameManager instance;
 
     public ItemManager itemManager;
+
+    public TileManager tileManager;
 
     private void Awake()
     {
@@ -22,5 +24,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject); //GameManager wont be destroyed after loading new scene
 
         itemManager = GetComponent<ItemManager>();
+        tileManager = GetComponent<TileManager>(); 
     }
 }
