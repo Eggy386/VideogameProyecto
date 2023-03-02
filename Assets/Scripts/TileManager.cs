@@ -10,7 +10,7 @@ public class TileManager : MonoBehaviour
 
     [SerializeField] private Tile hiddenInteractableTile;
     [SerializeField] private Tile interactedTile;
-    [SerializeField] private Tile plantedTile; //for now only 1 available, later on probably will be replaced by a list Tiles
+    [SerializeField] private PlantData plantedTile; //for now only 1 available, later on probably will be replaced by a list Tiles
 
     void Start()
     {
@@ -50,6 +50,7 @@ public class TileManager : MonoBehaviour
 
     public void PlantSeed(Vector3Int position)
     {
-        plantingMap.SetTile(position, plantedTile);
+        //Check wether item held by player is in plantable item list
+        plantingMap.SetTile(position, plantedTile.growthStagesTiles[0]);
     }
 }
