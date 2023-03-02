@@ -21,9 +21,20 @@ public class Player : MonoBehaviour
             {
                 //Change the tile to plowed
                 Debug.Log("Tile is interactable");
-                GameManager.instance.tileManager.SetInteracted(position);
+                GameManager.instance.tileManager.SetPlowed(position);
             }
 
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q)) 
+        {
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+            if (GameManager.instance.tileManager.IsPlowed(position))
+            {
+                Debug.Log("Player wants to plant a seeds");
+                //GameManager.instance.tileManager.PlantSeeds(position)
+                GameManager.instance.tileManager.PlantSeed(position);
+            }
         }
     }
 
