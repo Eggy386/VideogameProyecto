@@ -18600,7 +18600,7 @@ MonoBehaviour:
   plantingMap: {fileID: 2019573296}
   hiddenInteractableTile: {fileID: 11400000, guid: ac1d6069e624c0245baceb5dc200c3b2, type: 2}
   interactedTile: {fileID: 11400000, guid: 1dd3314c956a2c644b02387420eeb29d, type: 2}
-  plantedTile: {fileID: 11400000, guid: c9f34fb1b61b96a4197c2edf3f4e2418, type: 2}
+  plantedTile: {fileID: 11400000, guid: 042c709bc4015fc47ab2b4df349090e9, type: 2}
 --- !u!114 &1250340954 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5757087244217308716, guid: ecbd5b9d19fe1e24baa8cfa910ecef73, type: 3}
