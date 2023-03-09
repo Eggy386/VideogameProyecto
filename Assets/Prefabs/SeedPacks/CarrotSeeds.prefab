@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
       propertyPath: m_Name
-      value: CarrotSeeds Variant
+      value: CarrotSeeds
       objectReference: {fileID: 0}
     - target: {fileID: 689142574233267445, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
       propertyPath: m_Sprite
@@ -29,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 689142574233267450, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.446911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 689142574233267450, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4513557
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 689142574233267450, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
       propertyPath: m_LocalPosition.z
