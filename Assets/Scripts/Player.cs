@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Inventory inventory;
+    public InventoryManager inventory;
+ 
 
     private void Awake()
     {
-        inventory = new Inventory(27); // passing the num of slots we want;
+        inventory = GetComponent<InventoryManager>();
     }
 
     private void Update()
