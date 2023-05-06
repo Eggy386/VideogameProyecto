@@ -32,9 +32,18 @@ public class Player : MonoBehaviour
             Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
             if (GameManager.instance.tileManager.IsPlowed(position))
             {
-                Debug.Log("Player wants to plant a seeds");
-                //GameManager.instance.tileManager.PlantSeeds(position)
-                GameManager.instance.tileManager.PlantSeed(position);
+                Debug.Log("Player wants to plant seeds");
+
+                //======= PLANTING =======
+                int selectedSlotID = GameManager.instance.uiManager.toolBarUI.GetSelectedSlot().slotID;
+                string selectedItemName = inventory.toolbar.slots[selectedSlotID].itemName;
+                Debug.Log("selected Item: " +selectedItemName);
+                Item itemToPlant = GameManager.instance.itemManager.GetItemByName(selectedItemName);
+                GameManager.instance.tileManager.PlantSeed(position, itemToPlant);
+
+                //remove item if plantable!
+                if (itemToPlant != null && itemToPlant.data.isPlantable)
+                    inventory.toolbar.slots[selectedSlotID].RemoveItem();
             }
         }
     }

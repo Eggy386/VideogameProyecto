@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
 
     public Dictionary<string, Inventory_UI> inventoryUIByName = new Dictionary<string, Inventory_UI>();
     public List<Inventory_UI> inventory_UIs;
-
+    public ToolBar_UI toolBarUI;
     public GameObject inventoryPanel;
 
     public static Slot_UI draggedSlot;

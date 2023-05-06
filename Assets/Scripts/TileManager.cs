@@ -9,7 +9,7 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tilemap plantingMap;
 
     [SerializeField] private Tile hiddenInteractableTile;
-    [SerializeField] private Tile interactedTile;
+    [SerializeField] private Tile plowedTile;
     [SerializeField] private PlantData plantedTile; //for now only 1 available, later on probably will be replaced by a list Tiles
 
     void Start()
@@ -38,19 +38,28 @@ public class TileManager : MonoBehaviour
 
     public void SetPlowed(Vector3Int position)
     {
-        interactableMap.SetTile(position, interactedTile);
+        interactableMap.SetTile(position, plowedTile);
     }
 
     public bool IsPlowed(Vector3Int position)
     {
-        if(interactableMap.GetTile(position) == interactedTile)
+        if(interactableMap.GetTile(position) == plowedTile)
             return true;
         return false;
     }
 
-    public void PlantSeed(Vector3Int position)
+    public void PlantSeed(Vector3Int position, Item itemToPlant)
     {
-        //Check wether item held by player is in plantable item list
-        plantingMap.SetTile(position, plantedTile.growthStagesTiles[0]);
+        if(itemToPlant != null && itemToPlant.data.isPlantable) // + is something already planted here?
+        {
+            // set tile to first stage of growth
+                plantingMap.SetTile(position, itemToPlant.data.growthStagesTiles[0]);
+            // forward position and item into growthManager or smth -> It will update each planted plant 
+            // therefore changing it's growth stage
+        }
+        else
+        {
+            Debug.Log("Item that you are holding IS NOT plantable");
+        }
     }
 }

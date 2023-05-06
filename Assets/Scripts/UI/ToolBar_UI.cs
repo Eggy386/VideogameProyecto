@@ -70,5 +70,9 @@ public class ToolBar_UI : MonoBehaviour
             SelectSlot(8);
         }
     }
+    public Slot_UI GetSelectedSlot()
+    {
+        return selectedSlot;
+    }
 
 }

@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour
 
     void Start()
     {
-        hour = 6; minute = 0;
+        /*hour = 6; minute = 0;*/
     }
 
     void Update()
