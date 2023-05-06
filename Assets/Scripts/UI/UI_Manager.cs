@@ -36,6 +36,7 @@ public class UI_Manager : MonoBehaviour
         {
             dragSingle = false;
         }
+        RefreshInventoryUI("Toolbar");
     }
     public Inventory_UI GetInventory_UI(string inventoryName)
     {

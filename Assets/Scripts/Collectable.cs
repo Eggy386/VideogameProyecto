@@ -9,7 +9,6 @@ public class Collectable : MonoBehaviour
     // add collectable to player
     // delete collectable from the screen
 
-   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,7 +19,8 @@ public class Collectable : MonoBehaviour
             Item item = GetComponent<Item>();
             if(item != null)
             {
-                player.inventory.Add("Backpack", item);
+                player.inventory.Add("Toolbar", item);
+                // what if there is no available slot in Toolbar?
                 Destroy(this.gameObject);
             }
             

@@ -18,7 +18,6 @@ public class Inventory_UI : MonoBehaviour
     private void Awake()
     {
         canvas = FindObjectOfType<Canvas>();
-        
     }
 
     private void Start()

@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
+    [SerializeField] GameObject TimeUI;
+    [SerializeField] Sprite[] numericImages; 
+    [SerializeField] Image hourImage;
+    [SerializeField] Image minuteImage;
+
     public enum Season
     {
         Summer,
@@ -31,7 +37,7 @@ public class TimeManager : MonoBehaviour
 
     void Start()
     {
-        hour = 0; minute = 0;
+        hour = 6; minute = 0;
     }
 
     void Update()
@@ -57,6 +63,10 @@ public class TimeManager : MonoBehaviour
             currentSeason = GetNextSeason();
         }
         minute += Time.deltaTime * timeSpeed;
+        hourImage.sprite = numericImages[hour];
+        hourImage.SetNativeSize();
+        minuteImage.sprite = numericImages[(int)minute];
+        minuteImage.SetNativeSize();
     }
 
     private Season GetNextSeason()
