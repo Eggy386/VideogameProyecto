@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba58c6ab0064b044a3b089323d2886d, type: 3}
+  m_Name: Tomato_Seeds
+  m_EditorClassIdentifier: 
+  itemName: Tomato Seeds
+  icon: {fileID: -28857478, guid: 7273a44ef68ecfd46b8a8888ce358bdf, type: 3}
+  isPlantable: 1
+  growthStagesTiles:
+  - {fileID: 11400000, guid: c9f34fb1b61b96a4197c2edf3f4e2418, type: 2}
+  - {fileID: 11400000, guid: ae79a6b482d27074bb4964dc5913f4f5, type: 2}
+  - {fileID: 11400000, guid: 815f0917c9f37db4fa89b038b79d16b1, type: 2}
+  - {fileID: 11400000, guid: 142dc97975668e04fb77d0e423238811, type: 2}
+  - {fileID: 11400000, guid: 678818ed0a3a9a0438cb9cc528bbe7f2, type: 2}
+  - {fileID: 11400000, guid: 12dae9c80b40be54fa67f539e0a689d2, type: 2}
+  timeToNextGrowthStage: 0
+  grownPlant: {fileID: 8538369122346372171, guid: 05bd8d5a27dcee04d930f75bb34498d4, type: 3}

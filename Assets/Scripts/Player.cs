@@ -14,11 +14,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        // Plowing
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //Check if the tile is interactable
             Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
-            if(GameManager.instance.tileManager.isInteractable(position))
+            if (GameManager.instance.tileManager.isInteractable(position))
             {
                 //Change the tile to plowed
                 Debug.Log("Tile is interactable");
@@ -27,7 +28,8 @@ public class Player : MonoBehaviour
 
         }
 
-        if(Input.GetKeyDown(KeyCode.Q)) 
+        // Planting
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
             if (GameManager.instance.tileManager.IsPlowed(position))
@@ -37,7 +39,7 @@ public class Player : MonoBehaviour
                 //======= PLANTING =======
                 int selectedSlotID = GameManager.instance.uiManager.toolBarUI.GetSelectedSlot().slotID;
                 string selectedItemName = inventory.toolbar.slots[selectedSlotID].itemName;
-                Debug.Log("selected Item: " +selectedItemName);
+                Debug.Log("selected Item: " + selectedItemName);
                 Item itemToPlant = GameManager.instance.itemManager.GetItemByName(selectedItemName);
                 GameManager.instance.tileManager.PlantSeed(position, itemToPlant);
 
@@ -46,12 +48,16 @@ public class Player : MonoBehaviour
                     inventory.toolbar.slots[selectedSlotID].RemoveItem();
             }
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+            GameManager.instance.tileManager.CollectGrownPlant(position);
+        }
     }
 
     public void DropItem(Item item)
     {
         Vector2 spawnLocation = transform.position;
-
 
         Vector2 spawnOffset = Random.insideUnitCircle.normalized * Random.Range(1.0f, 1.5f);
 

@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da9ece27cd6bbb444985302600616cf7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba58c6ab0064b044a3b089323d2886d, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  plantName: Tomato
+  itemName: Tomato
+  icon: {fileID: 1981201027, guid: 2d6bcb9fe96758c4b82f293ccfc66e5f, type: 3}
+  isPlantable: 0
+  growthStagesTiles: []
   timeToNextGrowthStage: 0
-  seedPackage: {fileID: 11400000, guid: 6e7ce6782d25a1148b022a2b40206de7, type: 2}
-  growthStagesTiles:
-  - {fileID: 11400000, guid: c9f34fb1b61b96a4197c2edf3f4e2418, type: 2}
-  - {fileID: 11400000, guid: ae79a6b482d27074bb4964dc5913f4f5, type: 2}
-  - {fileID: 11400000, guid: 815f0917c9f37db4fa89b038b79d16b1, type: 2}
-  - {fileID: 11400000, guid: 142dc97975668e04fb77d0e423238811, type: 2}
-  - {fileID: 11400000, guid: 678818ed0a3a9a0438cb9cc528bbe7f2, type: 2}
-  - {fileID: 11400000, guid: 12dae9c80b40be54fa67f539e0a689d2, type: 2}
+  grownPlant: {fileID: 0}

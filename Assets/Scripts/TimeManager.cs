@@ -55,6 +55,8 @@ public class TimeManager : MonoBehaviour
         if (hour > 23)
         {
             dayNumber += 1;
+            // =========== GROW PLANTS! ============
+            GameManager.instance.tileManager.UpdateGrowthStages();
             hour = 0;
         }
         if (dayNumber > daysInSeason[currentSeason])

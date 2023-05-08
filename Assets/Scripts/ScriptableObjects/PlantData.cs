@@ -7,9 +7,6 @@ using UnityEngine.Tilemaps;
 public class PlantData : ScriptableObject
 {
     public string plantName;
-    public int timeToNextGrowthStage;
+    public int sellCost;
     public ItemData seedPackage;
-
-    public List<Tile> growthStagesTiles = new List<Tile>();
-
 }
