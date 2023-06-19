@@ -14,8 +14,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        // Plowing
-        if (Input.GetKeyDown(KeyCode.Space))
+        //check if interact works
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Interact();
+        }
+
+            // Plowing
+            if (Input.GetKeyDown(KeyCode.Space))
         {
             //Check if the tile is interactable
             Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
@@ -70,5 +76,48 @@ public class Player : MonoBehaviour
          {
             DropItem(item);
          }
+    }
+    private void Interact()
+    {
+        /*
+         * 
+         * 
+            Tile tile = GameManager.instance.tileManager.GetTile(position);
+            var action = tile.GetAction(); // returns an action i.e plow, collect, plant
+            action.Perform();
+         * 
+         * 
+         * */
+        // get player position
+        Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+        // check surroundings
+        Item plantedItemNearby = GameManager.instance.tileManager.GetPlantedItem(position);
+        Debug.Log("Planted Item Nearby: " + plantedItemNearby.name);
+        int growthStage = GameManager.instance.tileManager.GetPlantedItemGrowthStage(position);
+        // check holded item
+        int selectedSlotID = GameManager.instance.uiManager.toolBarUI.GetSelectedSlot().slotID;
+        string selectedItemName = inventory.toolbar.slots[selectedSlotID].itemName;
+        Item itemInHand = GameManager.instance.itemManager.GetItemByName(selectedItemName);
+
+
+        // By default
+        if (plantedItemNearby != null)
+        {
+            GameManager.instance.tileManager.CollectGrownPlant(position);
+        }
+        // plowing
+        if (GameManager.instance.tileManager.isInteractable(position))
+        {
+            //Change the tile to plowed
+            Debug.Log("Tile is interactable");
+            GameManager.instance.tileManager.SetPlowed(position);
+        }
+
+        // planting
+        if (itemInHand.data.isPlantable && GameManager.instance.tileManager.IsPlowed(position))
+        {
+            GameManager.instance.tileManager.PlantSeed(position, itemInHand);
+            inventory.toolbar.slots[selectedSlotID].RemoveItem();
+        }
     }
 }

@@ -23,3 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 148979e10140bed439b66b17ce516305, type: 2}
   - {fileID: 11400000, guid: aa101f7d89abdc2458b9778d1d72b160, type: 2}
   timeToNextGrowthStage: 0
+  grownPlant: {fileID: 7612631196267676212, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}

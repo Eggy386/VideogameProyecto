@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
-    private Vector3 direction;
+    private Vector3 direction;  
     void Start()
     {
         

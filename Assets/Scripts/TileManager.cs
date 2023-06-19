@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static UnityEditor.Progress;
@@ -101,4 +102,17 @@ public class TileManager : MonoBehaviour
 
         }
     }
+    public Item GetPlantedItem(Vector3Int position)
+    {
+        if(planted.ContainsKey(position))
+            return planted[position];
+        else return null;
+    }
+    public int GetPlantedItemGrowthStage(Vector3Int position)
+    {
+        if(growthStage.ContainsKey(position)) 
+            return growthStage[position];
+        else return -1;
+    }
+
 }

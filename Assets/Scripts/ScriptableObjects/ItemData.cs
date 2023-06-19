@@ -13,6 +13,8 @@ public class ItemData : ScriptableObject
     public bool isPlantable;
 
     //IF IS PLANTABLE:
+    
+    [Header("If plantable")]
     public List<Tile> growthStagesTiles = new List<Tile>();
     public int timeToNextGrowthStage; // optionally - I'm now considering upgrading each plant everyday.
     public GameObject grownPlant;
