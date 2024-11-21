@@ -24,7 +24,8 @@ public class TimeManager : MonoBehaviour
     public float minute;
     public float timeSpeed;
 
-
+    private float plantGrowthTimer = 0f; // Temporizador para las plantas
+    private float growthInterval = 5f;  // Intervalo de crecimiento (en segundos)
 
     private readonly Dictionary<Season, int> daysInSeason = new()
     {
@@ -43,6 +44,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         CalculateGameTime();
+        HandlePlantGrowth();
     }
 
     private void CalculateGameTime()
@@ -69,6 +71,19 @@ public class TimeManager : MonoBehaviour
         hourImage.SetNativeSize();
         minuteImage.sprite = numericImages[(int)minute];
         minuteImage.SetNativeSize();
+    }
+
+    private void HandlePlantGrowth()
+    {
+        // Incrementar el temporizador de crecimiento
+        plantGrowthTimer += Time.deltaTime;
+
+        // Verificar si ha pasado el intervalo
+        if (plantGrowthTimer >= growthInterval)
+        {
+            plantGrowthTimer = 0f; // Reiniciar el temporizador
+            GameManager.instance.tileManager.UpdateGrowthStages(); // Llamar al método de actualización
+        }
     }
 
     private Season GetNextSeason()
