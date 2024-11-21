@@ -4,46 +4,47 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 3.0f;
-
+    public float moveSpeed = 5f; // Velocidad de movimiento del personaje
     public Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private Vector3 direction;  
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Obtener el componente SpriteRenderer
     }
 
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        direction = new Vector3(horizontal, vertical);
+        // Obtener el input de movimiento en los ejes horizontal y vertical
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
 
-        AnimateMovement(direction);
+        // Crear un vector de movimiento basado en los inputs
+        Vector3 move = new Vector3(moveX, moveY, 0f);
 
-    }
+        // Aplicar el movimiento al personaje
+        transform.position += move * moveSpeed * Time.deltaTime;
 
-    //called after calculating collisions, resolving jitter
-    private void FixedUpdate()
-    {
-        transform.position += direction.normalized * speed * Time.deltaTime;
-    }
-
-    void AnimateMovement(Vector3 direction)
-    {
-        if(animator != null)
+        // Activar o desactivar la animación de caminar
+        if (move != Vector3.zero)
         {
-            if(direction.magnitude > 0)
+            animator.SetBool("isWalking", true);
+
+            // Voltear el sprite dependiendo de la dirección en el eje X
+            if (moveX > 0)
             {
-                animator.SetBool("isMoving", true);
-                animator.SetFloat("horizontal", direction.x);
-                animator.SetFloat("vertical", direction.y);
+                spriteRenderer.flipX = false; // Mirando a la derecha
             }
-            else
+            else if (moveX < 0)
             {
-                animator.SetBool("isMoving", false);
+                spriteRenderer.flipX = true; // Mirando a la izquierda
             }
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
         }
     }
 }
