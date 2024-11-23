@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba58c6ab0064b044a3b089323d2886d, type: 3}
+  m_Name: Strawberry_Seeds
+  m_EditorClassIdentifier: 
+  itemName: Strawberry Seeds
+  icon: {fileID: -942682125, guid: 7273a44ef68ecfd46b8a8888ce358bdf, type: 3}
+  isPlantable: 1
+  growthStagesTiles:
+  - {fileID: 11400000, guid: 3145932162f52bc41823d44a9f9fc5c7, type: 2}
+  - {fileID: 11400000, guid: 557d8f6effaaab844b7d1a6e9372b2f0, type: 2}
+  - {fileID: 11400000, guid: cf7da7859d9425d4f953c327df86d379, type: 2}
+  - {fileID: 11400000, guid: 034f76b4ff3da70418a16f91fd2eddc3, type: 2}
+  - {fileID: 11400000, guid: 2816d50c8a4091947a29278daa06f3f4, type: 2}
+  - {fileID: 11400000, guid: e2823971228a9f142937ec6588636408, type: 2}
+  timeToNextGrowthStage: 0
+  grownPlant: {fileID: 7609657423782356810, guid: 0681937af1820144f9b6a8e68d04ebd3, type: 3}
