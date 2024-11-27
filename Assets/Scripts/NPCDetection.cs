@@ -1,28 +1,74 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCDetection : MonoBehaviour
 {
-    public GameObject tasksCanvas; // Asigna tu Canvas de tareas desde el Inspector
+    public GameObject tasksCanvas; // Canvas de tareas
     public NPCMovement npcMovement; // Referencia al script NPCMovement
+    public Button closeButton; // Botón de cierre
     public string playerTag = "Player"; // Tag del jugador
+    private NPCTasks npcTasks; // Referencia al script NPCTasks del NPC detectado
+    public TaskDisplay taskDisplay; // Referencia al TaskDisplay que maneja los slots de tareas
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
     {
-        if (collision.CompareTag(playerTag))
-        {
-            Debug.Log("Hay un NPC cerca: NPC1");
-            tasksCanvas.gameObject.SetActive(true); // Activa el Canvas
-            npcMovement.canMove = false; // Detiene al NPC
-        }
+        // Configura el botón para cerrar el Canvas
+        closeButton.onClick.AddListener(CloseCanvasAndResumeNPC);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OpenCanvas(NPCTasks detectedNpcTasks)
     {
-        if (collision.CompareTag(playerTag))
+        if (detectedNpcTasks == null)
         {
-            Debug.Log("El jugador se alejó del NPC");
-            tasksCanvas.gameObject.SetActive(false); // Desactiva el Canvas
+            Debug.LogError("NPC Tasks is null!");
+            return;
+        }
+
+        npcTasks = detectedNpcTasks;
+
+        // Detener movimiento del NPC
+        if (npcMovement != null)
+        {
+            npcMovement.canMove = false;
+        }
+
+        // Mostrar las tareas en el Canvas usando TaskDisplay
+        taskDisplay.DisplayTasks(npcTasks.tasks);
+        tasksCanvas.SetActive(true);
+    }
+
+    // Método para cerrar el Canvas y reanudar el movimiento del NPC
+    public void CloseCanvasAndResumeNPC()
+    {
+        tasksCanvas.SetActive(false); // Cierra el Canvas
+
+        if (npcMovement != null)
+        {
             npcMovement.canMove = true; // Reactiva el movimiento del NPC
         }
     }
+
+    private string FormatTasks(System.Collections.Generic.List<NPCTasks.Task> tasks)
+    {
+        string formattedText = "Tareas del NPC:\n";
+        int taskNumber = 1;
+
+        foreach (var task in tasks)
+        {
+            formattedText += $"Tarea {taskNumber}: {task.taskName}\n";
+            formattedText += $"- Requisito: {task.requirement.quantity} {task.requirement.itemName}\n";
+
+            foreach (var reward in task.rewards)
+            {
+                formattedText += $"- Recompensa: {reward.rewardName} x{reward.rewardAmount}\n";
+            }
+
+            formattedText += "\n"; // Espaciado entre tareas
+            taskNumber++;
+        }
+
+        return formattedText;
+    }
 }
+

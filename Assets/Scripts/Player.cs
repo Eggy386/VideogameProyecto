@@ -65,15 +65,35 @@ public class Player : MonoBehaviour
 
     private void CheckForNPC()
     {
-        Collider2D npc = Physics2D.OverlapCircle(transform.position, detectionRadius, npcLayer);
+        Collider2D npcCollider = Physics2D.OverlapCircle(transform.position, detectionRadius, npcLayer);
 
-        if (npc != null)
+        if (npcCollider != null)
         {
-            Debug.Log("Hay un NPC cerca: " + npc.name);
+            // Verifica si el NPC tiene un componente NPCTasks
+            NPCTasks npcTasks = npcCollider.GetComponent<NPCTasks>();
+            if (npcTasks != null)
+            {
+                Debug.Log(npcTasks);
+                NPCDetection npcDetection = npcCollider.GetComponent<NPCDetection>();
+                // Verifica si npcDetection está asignado
+                if (npcDetection != null)
+                {
+                    // Llama al método OpenCanvas de NPCDetection y pasa las tareas del NPC
+                    npcDetection.OpenCanvas(npcTasks);
+                }
+                else
+                {
+                    Debug.LogError("NPCDetection no se encuentra en la escena. Asegúrate de que el script esté asignado.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("El NPC detectado no tiene un componente NPCTasks.");
+            }
         }
         else
         {
-            Debug.Log("No hay NPC cerca.");
+            Debug.Log("No se encontró ningún NPC en el radio de detección.");
         }
     }
 
