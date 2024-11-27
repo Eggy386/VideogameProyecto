@@ -13,17 +13,19 @@ public class TaskSlot : MonoBehaviour
 
     public void Setup(NPCTasks.Task task)
     {
-        Debug.Log("Configurando TaskSlot para: " + task.taskName);
-
         // Actualizando el nombre de la tarea y el progreso
         taskNameText.text = task.taskName;
-        progressText.text = $"{task.currentAmount}/{task.totalAmount}";
-        requirementText.text = $"{task.requirement.quantity}"; // Mostrar el nombre del requisito
+
+        requirementText.text = $"{task.currentAmount}/{task.requirement.quantity}"; // Mostrar el nombre del requisito
+
+        if(task.isCompleted == true)
+        {
+            requirementText.color = Color.green;
+        }
 
         // Asignando el ícono del requisito
         if (task.icon != null)
         {
-            Debug.Log("Asignando ícono del requisito: " + task.icon.name);
             requirementIcon.GetComponent<Image>().sprite = task.icon.GetComponent<SpriteRenderer>().sprite;
         }
 
@@ -38,7 +40,6 @@ public class TaskSlot : MonoBehaviour
                 rewardIcon.GetComponent<Image>().sprite = reward.rewardIcon.GetComponent<SpriteRenderer>().sprite;
             }
         }
-        rewardText.text = rewardsSummary; // Mostrar la lista de recompensas
-        Debug.Log("Recompensas asignadas: " + rewardsSummary);
+        rewardText.text = $"x{rewardsSummary}"; // Mostrar la lista de recompensas
     }
 }

@@ -37,7 +37,6 @@ public class TaskDisplay : MonoBehaviour
                 // Configura el slot con la tarea actual
                 taskSlotComponent.Setup(tasks[i]);
                 taskSlot.SetActive(true); // Asegúrate de que el slot esté activo
-                Debug.Log("TaskSlot actualizado con la tarea: " + tasks[i].taskName);
             }
             else
             {

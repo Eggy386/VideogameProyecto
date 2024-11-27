@@ -4152,6 +4152,8 @@ GameObject:
   - component: {fileID: 472583023}
   - component: {fileID: 472583022}
   - component: {fileID: 472583027}
+  - component: {fileID: 472583029}
+  - component: {fileID: 472583028}
   m_Layer: 3
   m_Name: NPC3
   m_TagString: Untagged
@@ -4309,6 +4311,72 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &472583028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472583021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b058a55c53c728458ca296f827f4c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tasks:
+  - icon: {fileID: 8538369122346372171, guid: 05bd8d5a27dcee04d930f75bb34498d4, type: 3}
+    taskName: Tarea 1
+    requirement:
+      itemName: Tomato
+      quantity: 1
+    rewards:
+    - rewardName: TomatoSeeds
+      rewardAmount: 3
+      rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
+    currentAmount: 0
+    totalAmount: 0
+    isCompleted: 0
+  - icon: {fileID: 7612631196267676212, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+    taskName: Tarea 2
+    requirement:
+      itemName: Carrot
+      quantity: 5
+    rewards:
+    - rewardName: CarrotSeeds
+      rewardAmount: 6
+      rewardIcon: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
+    currentAmount: 0
+    totalAmount: 0
+    isCompleted: 0
+  - icon: {fileID: 7612631196267676212, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+    taskName: Tarea 3
+    requirement:
+      itemName: Carrot
+      quantity: 10
+    rewards:
+    - rewardName: TomatoSeeds
+      rewardAmount: 12
+      rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
+    currentAmount: 0
+    totalAmount: 0
+    isCompleted: 0
+--- !u!114 &472583029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472583021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cba1c36b85eb9489d5c7786c4214fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tasksCanvas: {fileID: 34375674}
+  npcMovement: {fileID: 472583022}
+  closeButton: {fileID: 239114200}
+  playerTag: Player
+  taskDisplay: {fileID: 34375677}
 --- !u!1001 &478740444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46394,6 +46462,8 @@ GameObject:
   - component: {fileID: 1524532337}
   - component: {fileID: 1524532336}
   - component: {fileID: 1524532341}
+  - component: {fileID: 1524532343}
+  - component: {fileID: 1524532342}
   m_Layer: 3
   m_Name: NPC2
   m_TagString: Untagged
@@ -46551,6 +46621,72 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1524532342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524532335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cba1c36b85eb9489d5c7786c4214fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tasksCanvas: {fileID: 34375674}
+  npcMovement: {fileID: 1524532336}
+  closeButton: {fileID: 239114200}
+  playerTag: Player
+  taskDisplay: {fileID: 34375677}
+--- !u!114 &1524532343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524532335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b058a55c53c728458ca296f827f4c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tasks:
+  - icon: {fileID: 8538369122346372171, guid: 05bd8d5a27dcee04d930f75bb34498d4, type: 3}
+    taskName: Tarea 1
+    requirement:
+      itemName: Tomato
+      quantity: 2
+    rewards:
+    - rewardName: CarrotSeeds
+      rewardAmount: 5
+      rewardIcon: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
+    currentAmount: 0
+    totalAmount: 0
+    isCompleted: 0
+  - icon: {fileID: 7612631196267676212, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+    taskName: Tarea 2
+    requirement:
+      itemName: Carrot
+      quantity: 5
+    rewards:
+    - rewardName: TomatoSeeds
+      rewardAmount: 6
+      rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
+    currentAmount: 0
+    totalAmount: 0
+    isCompleted: 0
+  - icon: {fileID: 7612631196267676212, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+    taskName: Tarea 3
+    requirement:
+      itemName: Carrot
+      quantity: 9
+    rewards:
+    - rewardName: CarrotSeeds
+      rewardAmount: 12
+      rewardIcon: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
+    currentAmount: 0
+    totalAmount: 0
+    isCompleted: 0
 --- !u!114 &1530871669 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5757087244217308716, guid: ecbd5b9d19fe1e24baa8cfa910ecef73, type: 3}
@@ -51948,6 +52084,63 @@ RectTransform:
   m_AnchoredPosition: {x: 261.25, y: -76.25}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &2098411012
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7612631196267676212, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_Name
+      value: Carrot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.422823
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612631196267676218, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 814672c6c12a2234e86e1d5d7d89a2ed, type: 3}
 --- !u!1001 &2100364527
 PrefabInstance:
   m_ObjectHideFlags: 0

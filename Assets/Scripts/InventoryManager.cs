@@ -40,4 +40,25 @@ public class InventoryManager : MonoBehaviour
         }
         return null;
     }
+
+    public int GetItemCount(string inventoryName, string itemName)
+    {
+        if (inventoryByName.ContainsKey(inventoryName))
+        {
+            Inventory inventory = inventoryByName[inventoryName];
+            int totalCount = 0;
+
+            foreach (var slot in inventory.slots)
+            {
+                if (slot.itemName == itemName)
+                {
+                    totalCount += slot.count;
+                }
+            }
+
+            return totalCount;
+        }
+
+        return 0; // Si no encuentra el inventario o el ítem
+    }
 }

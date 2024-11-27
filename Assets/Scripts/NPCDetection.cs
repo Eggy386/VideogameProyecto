@@ -35,6 +35,7 @@ public class NPCDetection : MonoBehaviour
 
         // Mostrar las tareas en el Canvas usando TaskDisplay
         taskDisplay.DisplayTasks(npcTasks.tasks);
+        npcTasks.UpdateTaskProgressBasedOnInventory();
         tasksCanvas.SetActive(true);
     }
 
@@ -47,28 +48,6 @@ public class NPCDetection : MonoBehaviour
         {
             npcMovement.canMove = true; // Reactiva el movimiento del NPC
         }
-    }
-
-    private string FormatTasks(System.Collections.Generic.List<NPCTasks.Task> tasks)
-    {
-        string formattedText = "Tareas del NPC:\n";
-        int taskNumber = 1;
-
-        foreach (var task in tasks)
-        {
-            formattedText += $"Tarea {taskNumber}: {task.taskName}\n";
-            formattedText += $"- Requisito: {task.requirement.quantity} {task.requirement.itemName}\n";
-
-            foreach (var reward in task.rewards)
-            {
-                formattedText += $"- Recompensa: {reward.rewardName} x{reward.rewardAmount}\n";
-            }
-
-            formattedText += "\n"; // Espaciado entre tareas
-            taskNumber++;
-        }
-
-        return formattedText;
     }
 }
 

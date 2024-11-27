@@ -71,9 +71,9 @@ public class Player : MonoBehaviour
         {
             // Verifica si el NPC tiene un componente NPCTasks
             NPCTasks npcTasks = npcCollider.GetComponent<NPCTasks>();
+            npcTasks.UpdateTaskProgressBasedOnInventory();
             if (npcTasks != null)
             {
-                Debug.Log(npcTasks);
                 NPCDetection npcDetection = npcCollider.GetComponent<NPCDetection>();
                 // Verifica si npcDetection está asignado
                 if (npcDetection != null)
