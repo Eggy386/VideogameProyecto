@@ -61,4 +61,26 @@ public class InventoryManager : MonoBehaviour
 
         return 0; // Si no encuentra el inventario o el ítem
     }
+
+    public void RemoveItem(string inventoryName, string itemName, int quantity)
+    {
+        if (inventoryByName.ContainsKey(inventoryName))
+        {
+            Inventory inventory = inventoryByName[inventoryName];
+
+            foreach (var slot in inventory.slots)
+            {
+                if (slot.itemName == itemName)
+                {
+                    int toRemove = Mathf.Min(quantity, slot.count); // Asegura que no elimines más de lo disponible
+                    inventory.Remove(inventory.slots.IndexOf(slot), toRemove); // Usa el método `Remove` existente
+                    quantity -= toRemove;
+
+                    if (quantity <= 0) // Si ya hemos eliminado suficiente, salimos del bucle
+                        break;
+                }
+            }
+        }
+    }
+
 }

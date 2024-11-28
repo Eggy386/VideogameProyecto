@@ -32,6 +32,9 @@ public class NPCTasks : MonoBehaviour
 
     public List<Task> tasks = new List<Task>();
 
+    public GameObject carrotSeedPrefab; // Prefab para las semillas de zanahoria
+    public GameObject tomatoSeedPrefab;
+
     public void UpdateTaskProgress(string taskName, int amount)
     {
         foreach (var task in tasks)
@@ -117,4 +120,54 @@ public class NPCTasks : MonoBehaviour
         }
     }
 
+    public void GrantTaskRewards(Task task)
+    {
+        if (!task.isCompleted)
+        {
+            Debug.Log($"La tarea {task.taskName} aún no está completada. No se pueden otorgar recompensas.");
+            return;
+        }
+
+        foreach (var reward in task.rewards)
+        {
+            GameObject rewardPrefab = null;
+
+            // Determina el prefab correspondiente a la recompensa
+            if (reward.rewardName == "CarrotSeeds")
+                rewardPrefab = carrotSeedPrefab;
+            else if (reward.rewardName == "TomatoSeeds")
+                rewardPrefab = tomatoSeedPrefab;
+
+            if (rewardPrefab != null)
+            {
+                // Genera las recompensas en posiciones aleatorias cercanas al NPC
+                for (int i = 0; i < reward.rewardAmount; i++)
+                {
+                    Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-2f, 2f), 0f, Random.Range(-2f, 2f));
+                    Instantiate(rewardPrefab, spawnPosition, Quaternion.identity);
+                }
+
+                Debug.Log($"Recompensa otorgada: {reward.rewardAmount} x {reward.rewardName}");
+            }
+            else
+            {
+                Debug.LogWarning($"Prefab no encontrado para la recompensa: {reward.rewardName}");
+            }
+        }
+    }
+
+    public void CompleteTask(string taskName)
+    {
+        foreach (var task in tasks)
+        {
+            if (task.taskName == taskName && task.isCompleted)
+            {
+                GrantTaskRewards(task);
+                Debug.Log($"Recompensas otorgadas para la tarea: {taskName}");
+                return;
+            }
+        }
+
+        Debug.LogWarning($"No se encontró la tarea completada con el nombre: {taskName}");
+    }
 }

@@ -4330,7 +4330,7 @@ MonoBehaviour:
       itemName: Tomato
       quantity: 1
     rewards:
-    - rewardName: TomatoSeeds
+    - rewardName: Tomato Seeds
       rewardAmount: 3
       rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
     currentAmount: 0
@@ -4342,7 +4342,7 @@ MonoBehaviour:
       itemName: Carrot
       quantity: 5
     rewards:
-    - rewardName: CarrotSeeds
+    - rewardName: Carrot Seeds
       rewardAmount: 6
       rewardIcon: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
     currentAmount: 0
@@ -4354,12 +4354,14 @@ MonoBehaviour:
       itemName: Carrot
       quantity: 10
     rewards:
-    - rewardName: TomatoSeeds
+    - rewardName: Tomato Seeds
       rewardAmount: 12
       rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
     currentAmount: 0
     totalAmount: 0
     isCompleted: 0
+  carrotSeedPrefab: {fileID: 0}
+  tomatoSeedPrefab: {fileID: 0}
 --- !u!114 &472583029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42034,7 +42036,7 @@ MonoBehaviour:
       itemName: Carrot
       quantity: 2
     rewards:
-    - rewardName: CarrotSeeds
+    - rewardName: Carrot Seeds
       rewardAmount: 4
       rewardIcon: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
     currentAmount: 0
@@ -42046,7 +42048,7 @@ MonoBehaviour:
       itemName: Tomato
       quantity: 4
     rewards:
-    - rewardName: TomatoSeeds
+    - rewardName: Tomato Seeds
       rewardAmount: 6
       rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
     currentAmount: 0
@@ -42058,12 +42060,14 @@ MonoBehaviour:
       itemName: Tomato
       quantity: 10
     rewards:
-    - rewardName: TomatoSeeds
+    - rewardName: Tomato Seeds
       rewardAmount: 15
       rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
     currentAmount: 0
     totalAmount: 0
     isCompleted: 0
+  carrotSeedPrefab: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
+  tomatoSeedPrefab: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
 --- !u!114 &753333923 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1802121785239491481, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
@@ -42375,6 +42379,17 @@ RectTransform:
   m_AnchoredPosition: {x: 208.75, y: -76.25}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &858678628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4921481619693008444, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
+  m_PrefabInstance: {fileID: 8100502766377107433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &859199658
 GameObject:
   m_ObjectHideFlags: 0
@@ -45212,6 +45227,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
+--- !u!114 &1344163202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4921481619693008444, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
+  m_PrefabInstance: {fileID: 927838526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1361917844 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 88103198841525854, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
@@ -45235,6 +45261,7 @@ MonoBehaviour:
   requirementIcon: {fileID: 1302130937}
   rewardIcon: {fileID: 1729466576}
   requirementText: {fileID: 1179594911}
+  completeTaskButton: {fileID: 1618211012}
 --- !u!1001 &1373358060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46657,7 +46684,7 @@ MonoBehaviour:
       itemName: Tomato
       quantity: 2
     rewards:
-    - rewardName: CarrotSeeds
+    - rewardName: Carrot Seeds
       rewardAmount: 5
       rewardIcon: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
     currentAmount: 0
@@ -46669,7 +46696,7 @@ MonoBehaviour:
       itemName: Carrot
       quantity: 5
     rewards:
-    - rewardName: TomatoSeeds
+    - rewardName: Tomato Seeds
       rewardAmount: 6
       rewardIcon: {fileID: 689142574233267444, guid: f2a31de3cedcb3043bef6831262dfa78, type: 3}
     currentAmount: 0
@@ -46681,12 +46708,14 @@ MonoBehaviour:
       itemName: Carrot
       quantity: 9
     rewards:
-    - rewardName: CarrotSeeds
+    - rewardName: Carrot Seeds
       rewardAmount: 12
       rewardIcon: {fileID: 9143666791462074565, guid: eb75ad218d7b9c54094f12c0d91ab154, type: 3}
     currentAmount: 0
     totalAmount: 0
     isCompleted: 0
+  carrotSeedPrefab: {fileID: 0}
+  tomatoSeedPrefab: {fileID: 0}
 --- !u!114 &1530871669 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5757087244217308716, guid: ecbd5b9d19fe1e24baa8cfa910ecef73, type: 3}
@@ -47096,6 +47125,7 @@ MonoBehaviour:
   requirementIcon: {fileID: 327297286}
   rewardIcon: {fileID: 484487330}
   requirementText: {fileID: 693293372}
+  completeTaskButton: {fileID: 1344163202}
 --- !u!1 &1597984007
 GameObject:
   m_ObjectHideFlags: 0
@@ -47193,6 +47223,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8500759071441982094, guid: ecbd5b9d19fe1e24baa8cfa910ecef73, type: 3}
   m_PrefabInstance: {fileID: 1873518029}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1618211012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4921481619693008444, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
+  m_PrefabInstance: {fileID: 411204108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1623249779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49315,6 +49356,7 @@ MonoBehaviour:
   requirementIcon: {fileID: 581040748}
   rewardIcon: {fileID: 1804930965}
   requirementText: {fileID: 685406485}
+  completeTaskButton: {fileID: 858678628}
 --- !u!1 &1953340067
 GameObject:
   m_ObjectHideFlags: 0
@@ -52785,6 +52827,22 @@ PrefabInstance:
     - target: {fileID: 88103198841525854, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921481619693008444, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921481619693008444, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921481619693008444, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1951791805}
+    - target: {fileID: 4921481619693008444, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7160234205987411441, guid: 5498771e792fa384fbca981a0e4ad237, type: 3}
       propertyPath: m_Pivot.x
